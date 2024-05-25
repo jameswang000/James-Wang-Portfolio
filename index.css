@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.sectionContainer1 {
+    display : flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+    row-gap: 5px;
+    height: 300px;
+    background-color: #1F2937;
+    color: white;
+
+}
+
+div.headerLinksContainer {
+    display : flex;
+    width : 100%; 
+    flex-direction: row;
+    border : 1px solid green;
+    flex : 1 1 auto;
+    justify-content: space-around;
+    padding-left: 100px;
+    padding-right: 100px;
+    align-self: flex-start;
+    align-items: top;  
+}
+
+div.headerLogoContainer {
+    display : flex;
+    flex: 1 1 auto;
+    align-items: top;
+}
+
+div.linksContainer {
+    display : flex;
+    border: 1px solid red;
+    gap: 20px;
+    font-size: 18px ;
+    color : #f9faf8;
+    align-items: center;
+}
+
+h1#headerLogo {
+    flex: 1 1 auto ;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 24px;
+    color : #f9faf8;
+}
+
+
+.headerMainContainer {
+    display : flex;
+    width : 100%;
+    height: 60%;
+    flex : 1 1 auto;
+    justify-content: space-between;
+    border: 2px solid green;
+    padding-left : 100px;
+    padding-right: 100px;
+
+}
+
+#headerDescription {
+    flex : 1;
+    display: flex;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    min-width: 300px;
+}
+
+div#headerImage {
+    flex: 1;
+    min-width : 350px;
+}
+
+.descriptionTitle {
+    width : 100%;
+    flex: 1 1 auto;
+    margin : 0;
+    font-size: 48px ;
+    font-weight: 800;
+    color : #f9faf8;
+    line-height: 1;
+}
+
+.description {
+    width: 100%;
+    flex: 1 1 auto;
+    margin: 0;
+}
+
+.signUp {
+    width: 80px;
+    background-color: #3882f6;
+    color: #f9faf8;
+    border-radius: 25px;
+}
