@@ -1,16 +1,18 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-wrap : wrap;
 }
 
-
-.sectionContainer1 {
+.section1Container {
     display : flex;
     flex-direction: row;
     flex-wrap : wrap;
     row-gap: 5px;
-    height: 300px;
+    height: 20%;
     background-color: #1F2937;
-    color: white;
+    color: #f9faf8;
+    flex : 1 1 100%;
 
 }
 
@@ -99,3 +101,85 @@ div#headerImage {
     color: #f9faf8;
     border-radius: 25px;
 }
+
+.section2Container {
+    display : flex;
+    flex-wrap: wrap;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 75px;
+    height: 20%;
+    justify-content: center;
+    flex : 1 1 100%;
+}
+.section2Header {
+    text-align: center;
+}
+.section2Content {
+    flex: 1 1 100%;
+    display : flex;
+    justify-content: space-between;
+    gap : 10px;
+}
+.section2Item {
+    display: flex;
+    flex-wrap : wrap;
+    justify-content: center;
+}
+.section2Image {
+    flex: 1 1 100%; 
+    border: 2px solid #3882f6;
+    border-radius: 25px;
+
+}
+.section2Text {
+    flex: 1 1 100%;
+    text-align: center;
+}
+.section2Image > img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.section3Container {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #e5e7eb;
+    padding-left: 175px;
+    padding-right: 175px;
+
+}
+
+.quote {
+    flex : 1 1 100%;
+    text-align: center;
+    font-style: italic;
+}
+
+.author{
+    flex : 1 1 100%;
+    justify-self: center;
+    text-align: end;
+}
+
+.section4Container {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.section5Container {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #1F2937;
+    color : #f9faf8;
+}
+
+
+
+

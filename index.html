@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
     <body>
-        <header class="sectionContainer1">
+        <header class="section section1Container">
             <div id="headerLinks" class="headerLinksContainer">
                 <div class="headerLogoContainer">
                     <h1 id="headerLogo">Header Logo</h1>
@@ -29,9 +29,82 @@
             </div>
         </header>
 
-        <div id="body" class="sectionContainer2"></div>
-        <div id="quote" class="sectionContainer3"></div>
-        <div id="form" class="sectionContainer4"></div>
-        <div id="footer" class="sectionContainer5"></div>
+        <div class="section section2Container">
+            <h1 class="section2Header">Some random information.</h1>
+            <div class="section2Content">
+                <div class="section2Item">
+                    <div class="section2Image"><img src="PlaceHolder.png"></div>
+                    <p class="section2Text">insert image caption 1 here</p>
+                </div>
+                <div class="section2Item">
+                    <div class="section2Image"><img src="PlaceHolder.png"></div>
+                    <p class="section2Text">insert image caption 2 here</p>
+                </div>
+                <div class="section2Item">
+                    <div class="section2Image"><img src="PlaceHolder.png"></div>
+                    <p class="section2Text">insert image caption 3 here</p>
+                </div>
+                <div class="section2Item">
+                    <div class="section2Image"><img src="PlaceHolder.png"></div>
+                    <p class="section2Text">insert image caption 4 here</p>
+                </div>
+            </div>
+        </div>
+        <div class="section section3Container">
+            <p class="quote">"This is a really inspiring quote, I think it really is nice! 
+                This is a really inspiring quote, I think it really is nice! 
+                This is a really inspiring quote, I think it really is nice! 
+                This is a really inspiring quote, I think it really is nice! 
+                This is a really inspiring quote, I think it really is nice!"
+            </p>
+            <p class="author">-Thor, God of Thunder</p>
+        </div>
+        <div class="section section4Container">
+            <div class="section4form">
+                <div class="section4formlabel">
+                    <div class="section4message"></div>
+                </div>
+                <div class="section4formbutton">
+                    <div class="section4instruction"></div>
+                </div>
+            </div>
+        </div>
+        <style>
+            
+        </style>
+        <footer class="section5Container">
+            <p>afdsfsd</p>
+        </footer>
+        <script>
+            window.onload = function() {
+                const divSection2Images = document.querySelectorAll(".section2Image");
+                divSection2Images.forEach(div => {
+                    const computedStyle = getComputedStyle(div);
+                    div.style.height = computedStyle.width;
+                });
+
+                const sections = document.querySelectorAll(".section");
+
+                //Calculate the max height of all sections first and 
+                //then set the height of all section equal to it.
+                let maxHeight = -1;
+                for(let i = 0 ; i < sections.length ; i++) {
+                    const currSection = sections[i];
+                    const computedStyle = getComputedStyle(currSection);
+                    const currHeight = parseFloat(computedStyle.height);
+
+                    if(currHeight > maxHeight) {
+                        maxHeight = currHeight;
+                    }
+                }
+                console.log(maxHeight);
+                sections.forEach(section => {
+                    console.log(section);
+                    section.style.height = maxHeight + "px";
+                    console.log(section.style.height);
+                });
+
+            }
+        </script>
     </body>
 </html>
