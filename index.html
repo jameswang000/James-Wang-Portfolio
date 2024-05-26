@@ -13,9 +13,9 @@
                     <h1 id="headerLogo">Header Logo</h1>
                 </div>
                 <div class="linksContainer">
-                    <a class="link">Link 1</a>
-                    <a class="link">Link 2</a>
-                    <a class="link">Link 3</a>
+                    <a class="link">Header 1 Link</a>
+                    <a class="link">Header 2 Link</a>
+                    <a class="link">Header 3 Link</a>
                 </div>
             </div>
 
@@ -51,27 +51,21 @@
             </div>
         </div>
         <div class="section section3Container">
-            <p class="quote">"This is a really inspiring quote, I think it really is nice! 
-                This is a really inspiring quote, I think it really is nice! 
-                This is a really inspiring quote, I think it really is nice! 
-                This is a really inspiring quote, I think it really is nice! 
-                This is a really inspiring quote, I think it really is nice!"
-            </p>
+            <p class="quote">"This is a really inspiring quote, I think it really is nice!"</p>
             <p class="author">-Thor, God of Thunder</p>
         </div>
         <div class="section section4Container">
             <div class="section4form">
-                <div class="section4formlabel">
-                    <div class="section4message"></div>
-                </div>
-                <div class="section4formbutton">
-                    <div class="section4instruction"></div>
+                <div class="nested-flex-container">
+                    <div class="section4formlabel">
+                        <h1 class="section4message">Call to action! It's time!</h1>
+                        <p class="section4instruction">Sign up for the mailing list by clicking that button over there!<p>
+                    </div>
+                    <button class="signUp form-button section4formbutton">Sign up!</button>
                 </div>
             </div>
         </div>
-        <style>
-            
-        </style>
+      
         <footer class="section5Container">
             <p>afdsfsd</p>
         </footer>
@@ -81,6 +75,9 @@
                 divSection2Images.forEach(div => {
                     const computedStyle = getComputedStyle(div);
                     div.style.height = computedStyle.width;
+                    const img = div.firstChild;
+                    img.style.width = computedStyle.width;
+                    img.style.height = computedStyle.width;
                 });
 
                 const sections = document.querySelectorAll(".section");
@@ -103,6 +100,12 @@
                     section.style.height = maxHeight + "px";
                     console.log(section.style.height);
                 });
+
+                const divSection4 = document.querySelector(".section4Container");
+                const computedStyle = getComputedStyle(divSection4);
+                console.log(computedStyle.height);
+                let newHeight = parseFloat(computedStyle.height) / 3;
+                divSection4.style.height = newHeight + "px";
 
             }
         </script>
