@@ -4,110 +4,81 @@
         <meta charset="utf-8">
         <meta lang="en">
         <title>James Wang's Projects</title>
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+        <script src="./main.js" defer></script>
     </head>
     <body>
         <header class="section section1Container">
             <div id="headerLinks" class="headerLinksContainer">
                 <div class="headerLogoContainer">
-                    <h1 id="headerLogo">Header Logo</h1>
+                    <h1 id="headerLogo">James Wang</h1>
                 </div>
+
                 <div class="linksContainer">
-                    <a class="link">Header 1 Link</a>
-                    <a class="link">Header 2 Link</a>
-                    <a class="link">Header 3 Link</a>
+                    <a class="link" href="mailto:jameswa2@andrew.cmu.edu">Email</a>
+                    <a class="link" href="https://www.linkedin.com/in/james-wang0/" target="_blank">LinkedIn</a>
+                    <a class="link" href="https://github.com/jameswang000" target="_blank">GitHub</a>
                 </div>
             </div>
 
             <div id="headerMain" class="headerMainContainer">
                 <div id="headerDescription">
-                    <h1 class="descriptionTitle">This website is awesome</h1>
-                    <p class="description">Lorem ipsumafsdfasdfadsfadsfadsfsd</p>
-                    <button class="signUp">Sign up</button>
+                    <h1 class="descriptionTitle">Welcome to my Portfolio!</h1>
+                    <p class="description">Hello, my name is James and I'm a junior at Carnegie Mellon University. 
+                        On this webpage is a select portion of my school and personal projects, along with some 
+                        general information about me. Feel free to click through the various projects that I've linked
+                        and contact me if you find anything interesting!
+                    </p>
                 </div>
-                <div id="headerImage"><img src="PlaceHolder.png"></div>
+                <div id="headerImage"><img src="images/Website_Portrait.png" width="198px" height="285px"></div>
             </div>
         </header>
 
         <div class="section section2Container">
-            <h1 class="section2Header">Some random information.</h1>
+            <h1 class="section2Header">Projects</h1>
             <div class="section2Content">
                 <div class="section2Item">
-                    <div class="section2Image"><img src="PlaceHolder.png"></div>
-                    <p class="section2Text">insert image caption 1 here</p>
+                    <div class="section2Image">
+                        <a href="https://github.com/jameswang000/Sudoku" target="_blank">
+                            <img src="./images/sudoku_icon.png">
+                        </a>
+                    </div>
+                    <p class="section2Text">Desktop Sudoku App</p>
                 </div>
                 <div class="section2Item">
-                    <div class="section2Image"><img src="PlaceHolder.png"></div>
-                    <p class="section2Text">insert image caption 2 here</p>
+                    <div class="section2Image">
+                        <a href="https://jameswang000.github.io/Birthday-Card/" target="_blank">
+                            <img src="./images/cake_icon.png">
+                        </a>
+                    </div>
+                    <p class="section2Text">Digital Birthday Card</p>
                 </div>
                 <div class="section2Item">
-                    <div class="section2Image"><img src="PlaceHolder.png"></div>
-                    <p class="section2Text">insert image caption 3 here</p>
+                    <div class="section2Image">
+                        <a href="https://www.stat.cmu.edu/capstoneresearch/fall2023/315files_f23/team24.html"target="_blank">
+                            <img src="./images/language_icon.png">
+                        </a>
+                    </div>
+                    <p class="section2Text">Language Learning Graphical Report</p>
                 </div>
                 <div class="section2Item">
-                    <div class="section2Image"><img src="PlaceHolder.png"></div>
-                    <p class="section2Text">insert image caption 4 here</p>
+                    <div class="section2Image"><a href=""><img src="images/etc_icon.png"></a></div>
+                    <p class="section2Text">More projects to be added!</p>
                 </div>
             </div>
         </div>
         <div class="section section3Container">
-            <p class="quote">"This is a really inspiring quote, I think it really is nice!"</p>
-            <p class="author">-Thor, God of Thunder</p>
-        </div>
-        <div class="section section4Container">
-            <div class="section4form">
-                <div class="nested-flex-container">
-                    <div class="section4formlabel">
-                        <h1 class="section4message">Call to action! It's time!</h1>
-                        <p class="section4instruction">Sign up for the mailing list by clicking that button over there!<p>
-                    </div>
-                    <button class="signUp form-button section4formbutton">Sign up!</button>
-                </div>
-            </div>
+            <p class="quote">“Just take each step you’re able to manage, persevere little by little, and build it up that way.”</p>
+            <p class="author">―Sugaru Miaki, <em>Three Days of Happiness</em></p>
         </div>
       
         <footer class="section5Container">
-            <p>afdsfsd</p>
+            <p>© 2024 James Wang. All rights reserved.&emsp;</p>
+            <p>
+                Contact: <a href="mailto:jameswa2@andrew.cmu.edu">jameswa2@andrew.cmu.edu</a> |
+                <a href="https://www.linkedin.com/in/james-wang0/" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/jameswang000" target="_blank">GitHub</a>
+            </p>
         </footer>
-        <script>
-            window.onload = function() {
-                const divSection2Images = document.querySelectorAll(".section2Image");
-                divSection2Images.forEach(div => {
-                    const computedStyle = getComputedStyle(div);
-                    div.style.height = computedStyle.width;
-                    const img = div.firstChild;
-                    img.style.width = computedStyle.width;
-                    img.style.height = computedStyle.width;
-                });
-
-                const sections = document.querySelectorAll(".section");
-
-                //Calculate the max height of all sections first and 
-                //then set the height of all section equal to it.
-                let maxHeight = -1;
-                for(let i = 0 ; i < sections.length ; i++) {
-                    const currSection = sections[i];
-                    const computedStyle = getComputedStyle(currSection);
-                    const currHeight = parseFloat(computedStyle.height);
-
-                    if(currHeight > maxHeight) {
-                        maxHeight = currHeight;
-                    }
-                }
-                console.log(maxHeight);
-                sections.forEach(section => {
-                    console.log(section);
-                    section.style.height = maxHeight + "px";
-                    console.log(section.style.height);
-                });
-
-                const divSection4 = document.querySelector(".section4Container");
-                const computedStyle = getComputedStyle(divSection4);
-                console.log(computedStyle.height);
-                let newHeight = parseFloat(computedStyle.height) / 3;
-                divSection4.style.height = newHeight + "px";
-
-            }
-        </script>
     </body>
 </html>
