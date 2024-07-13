@@ -1,76 +1,113 @@
 /*
-  1. Use a more-intuitive box-sizing model.
+1. Use a more-intuitive box-sizing model.
 */
 *, *::before, *::after {
     box-sizing: border-box;
-  }
-  /*
-    2. Remove default margin
-  */
-  * {
+}
+/*
+2. Remove default margin
+*/
+* {
     margin: 0;
-  }
-  /*
-    Typographic tweaks!
-    3. Add accessible line-height
-    4. Improve text rendering
-  */
-  body {
+}
+/*
+Typographic tweaks!
+3. Add accessible line-height
+4. Improve text rendering
+*/
+body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-  }
-  /*
-    5. Improve media defaults
-  */
-  img, picture, video, canvas, svg {
+}
+/*
+5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
-  }
-  /*
-    6. Remove built-in form typography styles
-  */
-  input, button, textarea, select {
+}
+/*
+6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
     font: inherit;
-  }
-  /*
-    7. Avoid text overflows
-  */
-  p, h1, h2, h3, h4, h5, h6 {
+}
+/*
+7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
-  }
-  /*
-    8. Create a root stacking context
-  */
-  #root, #__next {
+}
+/*
+8. Create a root stacking context
+*/
+#root, #__next {
     isolation: isolate;
-  }
+}
 
 /*####################END OF RESET################################
 */
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-wrap : wrap;
-    flex-direction: column;
-}
+    display: grid;
+    width : 100vw;
+    height : 100vh;
 
-.section {                      
-    min-height : 200px;
+    grid-template-rows: 4fr 3.5fr 2fr 0.5fr;
+    grid-template-columns: 1fr;
 }
 
 .section1Container {
+    grid-row: 1 / 2;
+
     display : flex;
     flex-direction: row;
     flex-wrap : wrap;
     row-gap: 5px;
     background-color: #1F2937;
     color: #f9faf8;
-    flex : 2 1 100%;
-
 }
 
-div.headerLinksContainer {
+.section2Container {
+    grid-row : 2 / 3;
+
+    display : flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 75px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.section3Container {
+    grid-row: 3 / 4;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #e5e7eb;
+    padding-left: 175px;
+    padding-right: 175px;
+    padding-bottom: 20px;
+}
+
+.section5Container {
+    grid-row: 4 / 5;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #1F2937;
+    color : #f9faf8;
+}
+
+
+.headerLinksContainer {
     display : flex;
     width : 100%; 
     flex-direction: row;
@@ -82,13 +119,13 @@ div.headerLinksContainer {
     align-items: top;  
 }
 
-div.headerLogoContainer {
+.headerLogoContainer {
     display : flex;
     flex: 1 1 auto;
     align-items: top;
 }
 
-div.linksContainer {
+.linksContainer {
     display : flex;
     gap: 20px;
     font-size: 18px ;
@@ -124,6 +161,7 @@ h1#headerLogo {
     justify-content: space-between;
     padding-left : 100px;
     padding-right: 100px;
+    margin-bottom : 10px;
 
 }
 
@@ -139,18 +177,20 @@ div#headerImage {
     flex: 1;
     display : flex;
     justify-content: center;
+    width: 198px;
+    height: 285px;
+    margin-bottom: 70px;
 }
 
 div#headerImage > img {
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
-    margin-bottom: 20px;
     border : 2px solid white;
 }
 
 .descriptionTitle {
     width : 100%;
     flex: 1 1 auto;
-    margin : 0;
+    margin-bottom: 20px;
     font-size: 48px ;
     font-weight: 800;
     color : #f9faf8;
@@ -171,24 +211,15 @@ div#headerImage > img {
     border-radius: 10px;
 }
 
-.section2Container {
-    display : flex;
-    flex-wrap: wrap;
-    padding-left: 150px;
-    padding-right: 150px;
-    padding-bottom: 75px;
-    height: 20%;
-    justify-content: center;
-    flex : 1 1 100%;
-}
 .section2Header {
     text-align: center;
     font-size: 36px;
     font-weight: 800;
 }
+
 .section2Content {
     margin-top : 40px;
-    flex: 1 1 100%;
+    height : 80%;
     display : grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 300px;
@@ -196,14 +227,18 @@ div#headerImage > img {
 }
 
 .section2Item {
+    height : 80%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .section2Image {
+    width : 100%;
+    height : 100%;
+
     padding : 0px;
-    flex: 1 1 100%; 
     border: 2px solid #3882f6;
     border-radius: 25px;
     padding : 5px;
@@ -223,10 +258,6 @@ div#headerImage > img {
     transform: scale(0.95);
 }
 
-.section2Image a:focus {
-
-}
-
 .section2Image img {
     padding : 0px;
     height: 100%;
@@ -237,19 +268,6 @@ div#headerImage > img {
 .section2Text {
     flex: 1 1 100%;
     text-align: center;
-}
-
-
-.section3Container {
-    flex: 1 1 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    background-color: #e5e7eb;
-    padding-left: 175px;
-    padding-right: 175px;
-
 }
 
 .quote {
@@ -268,19 +286,6 @@ div#headerImage > img {
     text-align: end;
 }
 
-.section4Container {
-    flex: 1 1 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding-left : 100px;
-    padding-right : 100px;
-    padding-top : 75px;
-    padding-bottom: 75px; 
-    background-color: #f9faf8;
-    color: #f9faf8;
-    font-size: 12px;
-}   
 
 .section4form {
     flex : 1 1 0    ;
@@ -315,15 +320,6 @@ div#headerImage > img {
     border-color: #f9faf8;
     padding : 0px;
     border-width: 5px;
-}
-
-.section5Container {
-    flex: 1 1 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: #1F2937;
-    color : #f9faf8;
 }
 
 footer a {
